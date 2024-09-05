@@ -1,0 +1,187 @@
+.BookBase {
+    font-family: sans-serif;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background-color: #f8f8f8;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+}
+
+.header nav ul {
+    list-style-type: none;
+    display: flex;
+    gap: 15px;
+}
+
+.header nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+}
+
+.header nav ul li a:hover {
+    text-decoration: underline;
+}
+
+.main-content {
+    padding: 30px;
+}
+
+.section-title {
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.recommended-books .book-grid, 
+.categories .book-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 20px;
+}
+
+.book-card {
+    border: 5px solid #ddd;
+    border-radius: 18px;
+    overflow: hidden;
+}
+
+.book-card img {
+    width: 300px;
+    height: 250px;
+}
+
+.book-details {
+    padding: 15px;
+}
+
+.book-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.book-author {
+    font-size: 16px;
+    color: #666;
+}
+
+.book-rating {
+    margin-top: 5px;
+}
+
+.additional-details p {
+    margin: 5px 0;
+    font-size: 12px;
+    color: #999;
+}
+
+      /* Main content container */
+.main-content {
+    margin-left: 250px; /* Adjust based on sidebar width */
+    padding: 20px;
+    transition: margin-left 0.3s;
+}
+
+/* Sidebar container */
+.sidebar {
+    height: 100%;
+    width: 90px;
+    position: fixed;
+    top: 100px;
+    left: 0;
+    background-color: #ffffff; /* Sidebar background color */
+    padding-top: 20px;
+    transition: width 0.3s;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Sidebar links */
+.sidebar a {
+    padding: 15px 20px;
+    text-decoration: none;
+    font-size: 18px;
+    color: #000000; /* Text color set to black */
+    display: block;
+    transition: background-color 0.3s;
+    background-color: #ffffff; /* Background color of links set to white */
+}
+
+.sidebar a:hover {
+    background-color: #f0f0f0; /* Slightly different color on hover */
+}
+
+/* Collapsed sidebar */
+.sidebar.collapsed {
+    width: 80px;
+}
+
+.sidebar.collapsed a {
+    text-align: center;
+    padding: 15px 0;
+}
+
+.sidebar.collapsed a span {
+    display: none;
+}
+
+/* Collapsed main content */
+.main-content.collapsed {
+    margin-left: 80px;
+}
+
+.header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 15px 20px;
+	background-color: #f8f8f8;
+}
+
+.header .logo a {
+	text-decoration: none;
+	color: black;
+	font-size: 24px;
+	margin-right: 30px; /* Adjust the space between the logo and the search/login */
+}
+
+.header .search-login {
+	display: flex;
+	align-items: center;
+}
+
+.header .search-login form {
+	display: flex;
+	align-items: midddle center;
+	margin-right: 20px; /* Add space between the search section and login/register */
+}
+
+.header .search-login .btn {
+	margin-right: 30px;
+}
+
+/* Style for the form container */
+.form-inline {
+	display: flex;
+	justify-content: center; /* Center horizontally */
+	align-items: center; /* Center vertically */
+	gap: 10px; /* Space between input and button */
+	margin: 0 auto; /* Center the form itself if it has a fixed width */
+	width: 100%;
+	/* Make sure the form takes the full width of its container */
+}
+
+/* Style for the input field */
+.form-control {
+	max-width: 300px; /* Set a max-width for the input field */
+	width: 100%; /* Allow the input to be responsive */
+}
