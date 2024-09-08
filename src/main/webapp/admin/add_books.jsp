@@ -1,84 +1,166 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Add Book Page - E-Book</title>
-        <%@include file="allcss.jsp" %>
-    </head>
-    <body style="background-color: #f0f1f2">
-        <%@include file="navbar.jsp" %>
-        <c:if test="${empty userobj}">
-            <c:redirect url="../login.jsp" />
-        </c:if>
-        <h3 class="text-center">Hello, Admin</h3>
-        <div class="container mt-3">
-            <div class="row">
-                <div class="col-md-6 offset-md-3">
-                    <div class="card">
-                        <div class="card-body">
-                            <c:if test="${not empty succMsg}">
-                                <div class="container text-center">
-                                    <div class="alert alert-success" role="alert">
-                                        ${succMsg}
-                                    </div>
-                                </div>
-                                <c:remove var="succMsg" />
-                            </c:if>
-                            <c:if test="${not empty failedMsg}">
-                                <div class="container text-center">
-                                    <div class="alert alert-danger" role="alert">
-                                        ${failedMsg}
-                                    </div>
-                                </div>
-                                <c:remove var="failedMsg" />
-                            </c:if>
-                            <h3 class="text-center">Add Books</h3>
-                            <form action="../add_book" method="post" enctype="multipart/form-data">
-                                <div class="form-group">
-                                    <label>Book Name *</label>
-                                    <input type="text" name="bookName" class="form-control" aria-describedby="emailHelp" required>
-                                </div>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Add Book Page</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f4f4f9;
+            font-family: 'Arial', sans-serif;
+        }
 
-                                <div class="form-group">
-                                    <label>Author Name *</label>
-                                    <input type="text" name="authorName" class="form-control" aria-describedby="emailHelp" required>
-                                </div>
+        .container {
+            margin-top: 50px;
+            max-width: 700px;
+        }
 
-                                <div class="form-group">
-                                    <label>Book Price *</label>
-                                    <input type="number" name="bookPrice" class="form-control" aria-describedby="emailHelp" required>
-                                </div>
-                                <div class="form-group">
-                                    <label>Book Category *</label>
-                                    <select id="category" class="form-control" name="bCategory" required>
-                                        <option selected disabled>--- Select ---</option>
-                                        <option value="New">New Book</option>                                      
-                                    </select>
+        .card {
+            border: none;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+            background-color: #ffffff;
+        }
 
-                                </div>
-                                <div class="form-group">
-                                    <label>Book Status *</label>
-                                    <select id="status" class="form-control" name="bStatus" required>
-                                        <option selected disabled>--- Select ---</option>
-                                        <option value="Active">Active</option>  
-                                        <option value="Inactive">Inactive</option>  
-                                    </select>
-                                </div>
-                                <div class="form-group">
-                                    <label>Upload Image</label>
-                                    <input type="file" name="bImage" class="form-control" required>
-                                </div>
-                                <button type="submit" class="btn btn-primary badge-pill btn-block">Add Book</button>
-                            </form>
-                        </div>
-                    </div>    
-                </div>   
-            </div>
+        .card-body {
+            padding: 40px;
+        }
+
+        .text-center h3 {
+            font-weight: bold;
+            margin-bottom: 30px;
+            color: #343a40;
+        }
+
+        .form-group label {
+            font-weight: bold;
+            color: #495057;
+        }
+
+        .form-control {
+            border-radius: 8px;
+            padding: 12px;
+            font-size: 16px;
+            border: 1px solid #ced4da;
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            border: none;
+            padding: 14px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 8px;
+            width: 100%;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+
+        .alert {
+            margin-top: 15px;
+        }
+
+        .form-select {
+            padding: 10px;
+            border-radius: 8px;
+        }
+
+        .custom-file-input {
+            cursor: pointer;
+        }
+
+        .custom-file-label {
+            padding: 10px;
+        }
+
+        .form-group.mb-3 {
+            margin-bottom: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .card-body {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <c:if test="${empty userobj}">
+        <c:redirect url="../login.jsp" />
+    </c:if>
+    
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="card">
+                    <div class="card-body">
+                        <c:if test="${not empty succMsg}">
+                            <div class="alert alert-success text-center">
+                                ${succMsg}
+                            </div>
+                            <c:remove var="succMsg" />
+                        </c:if>
+                        
+                        <c:if test="${not empty failedMsg}">
+                            <div class="alert alert-danger text-center">
+                                ${failedMsg}
+                            </div>
+                            <c:remove var="failedMsg" />
+                        </c:if>
+                        
+                        <h3 class="text-center">Add New Book</h3>
+                        
+                        <form action="../add_book" method="post" enctype="multipart/form-data">
+                            <div class="form-group mb-3">
+                                <label for="bookName">Book Name *</label>
+                                <input type="text" name="bookName" id="bookName" class="form-control" required>
+                            </div>
+                            
+                            <div class="form-group mb-3">
+                                <label for="authorName">Author Name *</label>
+                                <input type="text" name="authorName" id="authorName" class="form-control" required>
+                            </div>
+                            
+                            <div class="form-group mb-3">
+                                <label for="bookPrice">Book Price *</label>
+                                <input type="number" name="bookPrice" id="bookPrice" class="form-control" required>
+                            </div>
+                            
+                            <div class="form-group mb-3">
+                                <label for="category">Book Category *</label>
+                                <select id="category" class="form-select" name="bCategory" required>
+                                    <option selected disabled>--- Select ---</option>
+                                    <option value="New">New Book</option>                                      
+                                </select>
+                            </div>
+                            
+                            <div class="form-group mb-3">
+                                <label for="status">Book Status *</label>
+                                <select id="status" class="form-select" name="bStatus" required>
+                                    <option selected disabled>--- Select ---</option>
+                                    <option value="Active">Active</option>  
+                                    <option value="Inactive">Inactive</option>  
+                                </select>
+                            </div>
+                            
+                            <div class="form-group mb-4">
+                                <label for="bImage">Upload Image *</label>
+                                <input type="file" name="bImage" class="form-control custom-file-input" required>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-primary">Add Book</button>
+                        </form>
+                    </div>
+                </div>    
+            </div>   
         </div>
-        <div style="margin-top: 20px;">
-            <%@include file="footer.jsp" %>
-        </div>
-    </body>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
 </html>
