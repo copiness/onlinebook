@@ -118,22 +118,22 @@
                         <form action="../add_book" method="post" enctype="multipart/form-data">
                             <div class="form-group mb-3">
                                 <label for="bookName">Book Name *</label>
-                                <input type="text" name="bookName" id="bookName" class="form-control" required>
+                                <input type="text" name="bname" id="bookName" class="form-control" required>
                             </div>
                             
                             <div class="form-group mb-3">
                                 <label for="authorName">Author Name *</label>
-                                <input type="text" name="authorName" id="authorName" class="form-control" required>
+                                <input type="text" name="author" id="authorName" class="form-control" required>
                             </div>
                             
                             <div class="form-group mb-3">
                                 <label for="bookPrice">Book Price *</label>
-                                <input type="number" name="bookPrice" id="bookPrice" class="form-control" required>
+                                <input type="number" name="price" id="bookPrice" class="form-control" required>
                             </div>
                             
                             <div class="form-group mb-3">
                                 <label for="category">Book Category *</label>
-                                <select id="category" class="form-select" name="bCategory" required>
+                                <select id="category" class="form-select" name="categories" required>
                                     <option selected disabled>--- Select ---</option>
                                     <option value="New">New Book</option>                                      
                                 </select>
@@ -141,7 +141,7 @@
                             
                             <div class="form-group mb-3">
                                 <label for="status">Book Status *</label>
-                                <select id="status" class="form-select" name="bStatus" required>
+                                <select id="status" class="form-select" name="status" required>
                                     <option selected disabled>--- Select ---</option>
                                     <option value="Active">Active</option>  
                                     <option value="Inactive">Inactive</option>  
@@ -150,7 +150,7 @@
                             
                             <div class="form-group mb-4">
                                 <label for="bImage">Upload Image *</label>
-                                <input type="file" name="bImage" class="form-control custom-file-input" required>
+                                <input type="file" name="bimg" class="form-control custom-file-input" required>
                             </div>
                             
                             <button type="submit" class="btn btn-primary">Add Book</button>
