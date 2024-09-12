@@ -50,6 +50,7 @@
                                 class="form-control" id="inputpassword4">
                         </div>
                     </div>
+                    </form>
 
                     <div class="text-center"></div>
                     <button  class="btn btn-warning text-white">Add Address</button>
