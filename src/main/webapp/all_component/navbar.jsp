@@ -59,7 +59,7 @@
         <div class="search-login">
             <form class="form-inline my-2 my-lg-0">
                 <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-success my-1 my-sm-2" type="submit">Search</button>
+                <a href="setting.jsp"class="btn btn-success my-1 my-sm-2" type="submit">Search</a>
             </form>
 
             <a href="login.jsp" class="btn btn-success">Login</a> 
