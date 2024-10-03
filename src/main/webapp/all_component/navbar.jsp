@@ -85,9 +85,9 @@
         <a href="#"><i class="fa-solid fa-cog"></i><span> Settings</span></a>
         <a href="#"><i class="fa-solid fa-address-book"></i><span> Contact</span></a>
         <!-- Only show logout link when logged in -->
-        <c:if test="${not empty userobj}">
+        <%-- <c:if test="${not empty userobj}">
             <a href="logout.jsp"><i class="fa-solid fa-sign-out-alt"></i><span> Logout</span></a>
-        </c:if>
+        </c:if> --%>
     </div>
 
     <main class="main-content">
