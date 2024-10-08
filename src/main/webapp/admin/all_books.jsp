@@ -46,7 +46,7 @@
                     <td><%= b.getStatus() %></td>
                 <td>
                 	<a href="edit_books.jsp?id=<%=b.getBookId() %>" class="btn btn-sm btn-primary">Edit</a>
-                	<a href="#" class="btn btn-sm btn-danger">Delete</a>
+                	<a href="../delete?id=<%=b.getBookId() %>" class="btn btn-sm btn-danger">Delete</a>
                 </td>
             </tr>
         	<%
