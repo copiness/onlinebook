@@ -16,7 +16,7 @@
 <body>
       
         <!-- Include Navbar -->
-    <jsp:include page="all_component/navbar.jsp" />
+      <jsp:include page="all_component/navbar.jsp" />
      
 	<main class="main-content">
 	<!-- Start Recent Book -->
@@ -25,7 +25,7 @@
 			<a href="#" class="see-all">See All ></a>
 			<div class="book-grid">
 				<div class="book-card">
-					<img alt="" src="book/java.jpg" style="width: 150px; height: 200px"class="img-thublin">
+					<img alt="" src="book/image.jpg" style="width: 150px; height: 200px"class="img-thublin">
 					<div class="book-details">
 						<h3 class="book-title">Java Programming</h3>
 						<p class="book-author">Surbhi Kakar</p>
@@ -35,7 +35,7 @@
 					</div>
 				</div>
 				<div class="book-card">
-					<img alt="" src="book/c.jpg" style="width: 150px; height: 200px"class="img-thublin">
+					<img alt="" src="book/pic.jpg" style="width: 150px; height: 200px"class="img-thublin">
 					<div class="book-details">
 						<h3 class="book-title">C Programming</h3>
 						<p class="book-author">R. Chopra</p>
@@ -44,7 +44,7 @@
 					</div>
 				</div>
 				<div class="book-card">
-					<img alt="" src="book/css&html.jpg"style="width: 150px; height: 200px" class="img-thublin">
+					<img alt="" src="book/photo.jpeg"style="width: 150px; height: 200px" class="img-thublin">
 					<div class="book-details">
 						<h3 class="book-title">Css&Html Programming</h3>
 						<p class="book-author">R. Kakar</p>
