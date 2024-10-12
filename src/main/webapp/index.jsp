@@ -1,3 +1,7 @@
+<%@page import="com.entity.BookDtls"%>
+<%@page import="java.util.List"%>
+<%@page import="com.company.util.DBUtil"%>
+<%@page import="com.company.dao.BookDaoImpl"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -73,45 +77,26 @@
 			<h2 class="section-title">New Book</h2>
 			<a href="#" class="see-all">See All ></a>
 			<div class="book-grid">
+			<%
+				BookDaoImpl dao = new BookDaoImpl(DBUtil.getConn());
+				List<BookDtls> list = dao.getNewBook();
+				for(BookDtls b:list){
+				%>
 				<div class="book-card">
-					<img alt="" src="book/java.jpg" style="width: 150px; height: 200px"class="img-thublin">
+					<img alt="" src="book/<%=b.getPhotoName() %>" style="width: 150px; height: 200px"class="img-thublin">
 					<div class="book-details">
-						<h3 class="book-title">Java Programming</h3>
-						<p class="book-author">Surbhi Kakar</p>
+						<h3 class="book-title"><%=b.getBookName() %></h3>
+						<p class="book-author"><%=b.getAuthor() %></p>
 						
 						   <a href="view_books.jsp" class="btn btn-primary btn-sm ml-1">ViewDetails</a> 
 						
 					</div>
 				</div>
-				<div class="book-card">
-					<img alt="" src="book/c.jpg" style="width: 150px; height: 200px"class="img-thublin">
-					<div class="book-details">
-						<h3 class="book-title">C Programming</h3>
-						<p class="book-author">R. Chopra</p>
-						
-							<a href="viewDetails.jsp?bookId=2"class="btn btn-primary btn-sm ml-1">View Details</a>
-					</div>
-				</div>
-				<div class="book-card">
-					<img alt="" src="book/css&html.jpg"style="width: 150px; height: 200px" class="img-thublin">
-					<div class="book-details">
-						<h3 class="book-title">Css&Html Programming</h3>
-						<p class="book-author">R. Kakar</p>
-						
-						   <a href="viewDetails.jsp?bookId=3"class="btn btn-primary btn-sm ml-1">View Details</a>
-					</div>
-				</div>
-				<div class="book-card">
-					<img alt="" src="book/angular.jpg" style="width: 150px; height: 200px" class="img-thublin">
-					<div class="book-details">
-						<h3 class="book-title">Angular framework</h3>
-						<p class="book-author">Ravi kiran</p>
-						
-                            <a href="viewDetails.jsp?bookId=4" class="btn btn-primary btn-sm ml-1">View Details</a>
-						
-						
-					</div>
-				</div>
+				<%
+				}
+			%>
+				
+				
 				<!-- Add more book cards as needed -->
 			</div>
 		</section>

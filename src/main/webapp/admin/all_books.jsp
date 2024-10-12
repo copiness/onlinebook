@@ -11,6 +11,8 @@
     <title>Insert title here</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
 
@@ -45,8 +47,9 @@
                     <td><%= b.getBookCategory() %></td>
                     <td><%= b.getStatus() %></td>
                 <td>
-                	<a href="edit_books.jsp?id=<%=b.getBookId() %>" class="btn btn-sm btn-primary">Edit</a>
-                	<a href="../delete?id=<%=b.getBookId() %>" class="btn btn-sm btn-danger">Delete</a>
+                	<a href="edit_books.jsp?id=<%=b.getBookId() %>" class="btn btn-sm btn-primary custom-edit-btn">Edit</a>
+                    <a href="../delete?id=<%=b.getBookId() %>" class="btn btn-sm btn-danger custom-delete-btn">Delete</a>
+
                 </td>
             </tr>
         	<%
