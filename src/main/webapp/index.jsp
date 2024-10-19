@@ -28,45 +28,29 @@
 			<h2 class="section-title">RecentBook</h2>
 			<a href="#" class="see-all">See All ></a>
 			<div class="book-grid">
-				<div class="book-card">
-					<img alt="" src="book/image.jpg" style="width: 150px; height: 200px"class="img-thublin">
+				<%
+				BookDaoImpl dao2 = new BookDaoImpl(DBUtil.getConn());
+				List<BookDtls> list2 =dao2.getRecentBooks();
+				for(BookDtls b:list2){
+					%>
+					<div class="book-card">
+					<img alt="" src="book/<%=b.getPhotoName() %>" style="width: 150px; height: 200px" class="img-thublin">
 					<div class="book-details">
-						<h3 class="book-title">Java Programming</h3>
-						<p class="book-author">Surbhi Kakar</p>
-						
-						   <a href="view_books.jsp" class="btn btn-primary btn-sm ml-1">ViewDetails</a> 
-						
-					</div>
-				</div>
-				<div class="book-card">
-					<img alt="" src="book/pic.jpg" style="width: 150px; height: 200px"class="img-thublin">
-					<div class="book-details">
-						<h3 class="book-title">C Programming</h3>
-						<p class="book-author">R. Chopra</p>
-						
-							<a href="viewDetails.jsp?bookId=2"class="btn btn-primary btn-sm ml-1">View Details</a>
-					</div>
-				</div>
-				<div class="book-card">
-					<img alt="" src="book/photo.jpeg"style="width: 150px; height: 200px" class="img-thublin">
-					<div class="book-details">
-						<h3 class="book-title">Css&Html Programming</h3>
-						<p class="book-author">R. Kakar</p>
-						
-						   <a href="viewDetails.jsp?bookId=3"class="btn btn-primary btn-sm ml-1">View Details</a>
-					</div>
-				</div>
-				<div class="book-card">
-					<img alt="" src="book/angular.jpg" style="width: 150px; height: 200px" class="img-thublin">
-					<div class="book-details">
-						<h3 class="book-title">Angular framework</h3>
-						<p class="book-author">Ravi kiran</p>
+						<h3 class="book-title"><%=b.getBookName() %></h3>
+						<p class="book-author"><%=b.getAuthor() %></p>
 						
                             <a href="viewDetails.jsp?bookId=4" class="btn btn-primary btn-sm ml-1">View Details</a>
 						
 						
 					</div>
 				</div>
+					
+					<%
+				}
+				%>
+				<div class="text-center mt-1">
+                <a href="all_recent_books.jsp" class="btn btn-danger btn-block text-white">View All</a>
+            </div>
 				<!-- Add more book cards as needed -->
 			</div>
 		</section>

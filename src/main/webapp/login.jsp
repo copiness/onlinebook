@@ -1,19 +1,19 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Login Page</title>
-        <%-- <%@include file="all_component/all_css.jsp" %> --%>
         <link rel="stylesheet" href="all_components/footer.css"/>
+        <link rel="stylesheet" href="styles.css"/> <!-- Link to the custom CSS file -->
+        <link rel="stylesheet" href="all_component/index.css">
     </head>
-    <body style="background-color: #f0f1f2">
-        <%-- <%@include file="all_component/navbar.jsp" %> --%>
+    <body class="login-page-background">
+    <%@include file="all_component/navbar.jsp" %>
         <div class="container-fluid">
-            <div class="row p-5">
-                <div class="col-md-4 offset-md-4">
-                    <div class="card">
+            <div class="row p-5 justify-content-center">
+                <div class="col-md-4">
+                    <div class="card shadow-lg login-card">
                         <div class="card-body">
                             <c:if test="${not empty failedMsg}">
                                 <div class="container text-center">
@@ -31,27 +31,26 @@
                                 </div>
                                 <c:remove var="succMsg" />
                             </c:if>
-                            <div class="text-center">
-                                <i class="fa fa-user-plus fa-2x" aria-hidden="true"></i>
+                            <div class="text-center login-header">
+                                <i class="fa fa-user-plus fa-2x" aria-hidden="true" style="color: #6a11cb;"></i>
                                 <h5>Login</h5>
                             </div>
 
                             <form action="login" method="post">
                                 <div class="form-group">
                                     <label>Enter Email *</label>
-                                    <input type="email" name="email" required class="form-control">
+                                    <input type="email" name="email" required class="form-control login-input">
                                 </div>
                                 <div class="form-group">
                                     <label>Enter Password *</label>
-                                    <input type="password" name="password" required class="form-control" >
+                                    <input type="password" name="password" required class="form-control login-input">
                                 </div>
-                                <button type="submit" class="btn btn-primary badge-pill btn-block">Login</button>
-
+                                <button type="submit" class="btn btn-primary btn-block login-button">Login</button>
                             </form>
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>
     </body>
+</html>
