@@ -2,18 +2,17 @@
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
-
 <head>
-
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
 </head>
 <body style="background-color: #f7f7f7;">
 <%@include file="all_component/navbar.jsp"%>
 <style type="text/css">
+
+
 a{
 text-decoration: none;
 color: black;
@@ -95,8 +94,6 @@ a:hover {
         </a>
     </div>
 </div>
-
-
 
 </div>
 </body>
