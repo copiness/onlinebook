@@ -5,10 +5,9 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Order Book</title>
-<%@include file="all_component/allCss.jsp"%>
 </head>
 <body>
-<%@include file="all_component/navbar.jsp"%>
+
     <div class="container p-1">
         <h3 class="text-center text-primary">Your Order</h3>
         <table class="table table-striped mt-3">
@@ -21,7 +20,7 @@
                 <th scope="col">Price</th>
                 <th scope="col">Payment Type</th>
               </tr>
-            </thead>
+            </thead>v  
             <tbody>
               <tr>
                 <th scope="row">1</th>

@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+ <%@ taglib  prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+ <%@page isELIgnored="false"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,13 +19,24 @@
                 <div class="card">
                     <div class="card-body">
                         <h4 class="text-center text-primary">Edit Profile</h4>
-                        <form action="register" method="post">
+                        <form action="update_profile" method="post">
                         
+                        <c:if test="${not empty failedMsg }">
+                           <h5 class="text-center text-danger">$failedMsg</h5>
+							<c:remove var="failedMsg" scope="session"  />
+						</c:if>
+						
+						  <c:if test="${not empty succMsg }">
+                           <h5 class="text-center text-danger">$failedMsg</h5>
+							<c:remove var="failedMsg" scope="session"  />
+						</c:if>
+                        
+                            <input type="hidden" value="${userobj.id }" name="id">
                             
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Enter Full Name</label> <input
                                    type="text" class="form-control"id="exampleInputEmail1" 
-                                   aria-describedby="emailHelp" required="required" name="fname" >
+                                   aria-describedby="emailHelp" required="required" name="fname" value="${userobj.name}">
                             </div>
  
                             
@@ -31,7 +44,7 @@
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Email Address</label> <input
                                     type="email" class="form-control" id="exampleInputEmail1" 
-                                    aria-describedby="emailHelp" required="required" name="email">
+                                    aria-describedby="emailHelp" required="required" name="email" value="${userobj.email}">
                             </div>
 
 
@@ -39,7 +52,7 @@
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Phone No</label><input
                                     type="number" class="form-control" id="exampleInputEmail1" 
-                                    aria-describedby="emailHelp" required="required" name="phno">
+                                    aria-describedby="emailHelp" required="required" name="phno" value="${userobj.phnos}">
                             </div>
      
     

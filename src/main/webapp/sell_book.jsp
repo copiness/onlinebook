@@ -5,7 +5,6 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Sell Book</title>
-<%@include file="all_component/allCss.jsp"%>
 </head>
 <body style="background-color: #f0f1f2;">
 <%@include file="all_component/navbar.jsp"%>

@@ -5,7 +5,7 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Helpline </title>
-<%@include file="all_component/allCss.jsp"%>
+
 </head>
 <body>
 <%@include file="all_component/navbar.jsp"%>
