@@ -1,3 +1,4 @@
+<%@page import="com.entity.User"%>
 <%@page import="com.entity.BookDtls"%>
 <%@page import="java.util.List"%>
 <%@page import="com.company.util.DBUtil"%>
@@ -18,7 +19,10 @@
 </style>
 </head>
 <body>
-      
+      <%
+      User u= (User) session.getAttribute("userobj");
+
+      %>
         <!-- Include Navbar -->
       <jsp:include page="all_component/navbar.jsp" />
      
@@ -34,12 +38,24 @@
 				for(BookDtls b:list2){
 					%>
 					<div class="book-card">
+						<%
+				if (u ==null) {
+				%>
+				<a href="login.jsp" class="btn btn-success btn-sm ml-2">Add Cart</a>
+				<%
+				} else {
+				%>
+				<a href="cart?bid=<%=b.getBookId() %>&&uid=<%=u.getId() %>" class="btn btn-sucess btn-sm ml-2">Add Cart</a>
+				<%
+				}
+				%>
+					
 					<img alt="" src="book/<%=b.getPhotoName() %>" style="width: 150px; height: 200px" class="img-thublin">
 					<div class="book-details">
 						<h3 class="book-title"><%=b.getBookName() %></h3>
 						<p class="book-author"><%=b.getAuthor() %></p>
 						
-                            <a href="viewDetails.jsp?bookId=4" class="btn btn-primary btn-sm ml-1">View Details</a>
+                            <a href="view_book.jsp?bid=<%=b.getBookId() %>" class="btn btn-primary btn-sm ml-1">View Details</a>
 						
 						
 					</div>
@@ -61,18 +77,30 @@
 			<h2 class="section-title">New Book</h2>
 			<a href="#" class="see-all">See All ></a>
 			<div class="book-grid">
+			
 			<%
 				BookDaoImpl dao = new BookDaoImpl(DBUtil.getConn());
 				List<BookDtls> list = dao.getNewBook();
 				for(BookDtls b:list){
 				%>
 				<div class="book-card">
-					<img alt="" src="book/<%=b.getPhotoName() %>" style="width: 150px; height: 200px"class="img-thublin">
+				<%
+				if (u ==null) {
+				%>
+				<a href="login.jsp" class="btn btn-success btn-sm ml-2">Add Cart</a>
+				<%
+				} else {
+				%>
+				<a href="cart?bid=<%=b.getBookId() %>&&uid=<%=u.getId() %>" class="btn btn-sucess btn-sm ml-2">Add Cart</a>
+				<%
+				}
+				%>
+				<img alt="" src="book/<%=b.getPhotoName() %>" style="width: 150px; height: 200px"class="img-thublin">
 					<div class="book-details">
 						<h3 class="book-title"><%=b.getBookName() %></h3>
 						<p class="book-author"><%=b.getAuthor() %></p>
 						
-						   <a href="view_books.jsp" class="btn btn-primary btn-sm ml-1">ViewDetails</a> 
+						   <a href="view_book.jsp?bid=<%=b.getBookId() %>" class="btn btn-primary btn-sm ml-1">ViewDetails</a> 
 						
 					</div>
 				</div>
