@@ -25,7 +25,6 @@ public class UpdateProfileServlet extends HttpServlet{
 			  String password = req.getParameter("password");
 			  
 			  
-			  
 			  User us=new User();
 			  us.setId(id);
 			  us.setName(name);

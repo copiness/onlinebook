@@ -7,7 +7,7 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Edit Profile</title>
-<%@include file="all_component/allCss.jsp"%>
+<%@include file="all_component/all_css.jsp" %>
 </head>
 <body style="background-color: #f0f1f2;">
     <%@include file="all_component/navbar.jsp"%>
@@ -19,7 +19,7 @@
                 <div class="card">
                     <div class="card-body">
                         <h4 class="text-center text-primary">Edit Profile</h4>
-                        <form action="update_profile" method="post">
+                        <form action="/update_profile" method="post">
                         
                         <c:if test="${not empty failedMsg }">
                            <h5 class="text-center text-danger">$failedMsg</h5>

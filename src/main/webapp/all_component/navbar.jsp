@@ -22,8 +22,8 @@
         }
 
         .sidebar {
-            margin-top: 0px;
-            width: 200px; /* Add margin so that the sidebar doesn't overlap with the fixed navbar */
+            margin-top: 10px;
+            /*width: 200px; /* Add margin so that the sidebar doesn't overlap with the fixed navbar */
         }
 
         .main-content {
@@ -39,8 +39,8 @@
         }
 
         .sidebar a {
-            display: block;
-            padding: 50px;
+            display: inline;
+            padding: 70px;
             text-decoration: none;
             color: #333;
         }
@@ -65,7 +65,7 @@
             <a href="login.jsp" class="btn btn-success">Login</a> 
             <a href="register.jsp" class="btn btn-primary text-white">Register</a>
         </div>
-    </header>
+    
 
     <!-- Sidebar -->
     <div class="sidebar" id="sidebar">
@@ -76,6 +76,8 @@
         <a href="#"><i class="fa-solid fa-address-book"></i><span> Contact</span></a>
         <a href="#"><i class="fa-solid fa-sign-out-alt"></i><span> Logout</span></a>
     </div>
+    
+    </header>
 
     <main class="main-content">
         <!-- Your main content here -->
