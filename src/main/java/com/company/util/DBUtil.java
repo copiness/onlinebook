@@ -1,6 +1,7 @@
 package com.company.util;
 
 import java.sql.Connection;
+
 import java.sql.DriverManager;
 
 public class DBUtil {
@@ -9,7 +10,7 @@ public class DBUtil {
 	{
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/digitalbookrepo","root","satu123#");
+			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/digitalbookrepo","root","root");
 
 			
 		}catch(Exception e) {

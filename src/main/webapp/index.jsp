@@ -14,9 +14,11 @@
 </style>
 </head>
 <body>
-      
-        <!-- Include Navbar -->
+ <!-- Include Navbar -->
       <jsp:include page="all_component/navbar.jsp" />
+   
+      
+      
      
 	<main class="main-content">
 	<!-- Start Recent Book -->
