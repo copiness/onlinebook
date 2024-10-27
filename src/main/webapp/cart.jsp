@@ -58,7 +58,6 @@
                 </div>
             </div>
         </div>
-        <div>
         </div>
 
         <!-- Second Column (To the Right, Form) -->
