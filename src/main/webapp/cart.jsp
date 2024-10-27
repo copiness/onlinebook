@@ -58,6 +58,8 @@
                 </div>
             </div>
         </div>
+        <div>
+        </div>
 
         <!-- Second Column (To the Right, Form) -->
         <div class="col-md-6" style="height: 300px; width: 900px">
