@@ -20,7 +20,7 @@ color: black;
 a:hover {
     text-decoration: none;
 }
-</style> 
+</style>
 <div class="container">
     <h3 class="text-center">Hello, pabitra</h3>
     <div class="row p-5">

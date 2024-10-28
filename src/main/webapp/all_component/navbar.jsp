@@ -40,7 +40,7 @@
 
         .sidebar a {
             display: inline;
-            padding: 70px;
+            padding: 90px;
             text-decoration: none;
             color: #333;
         }

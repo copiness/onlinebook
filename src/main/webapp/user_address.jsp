@@ -5,7 +5,7 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Edit Address</title>
-<%@include file="all_component/allCss.jsp"%>
+
 </head>
 <body>
 <body style="background-color: #f0f1f2;">
