@@ -1,13 +1,15 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+<%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="ISO-8859-1">
+    <meta charset="UTF-8">
     <title>Admin: Home</title>
     <!-- Bootstrap CDN for layout and icons -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <link rel="stylesheet" href="../all_component/index.css">
+    
     <style>
         body {
             background: linear-gradient(135deg, #89fffd, #ef32d9);
@@ -89,6 +91,8 @@
     </style>
 </head>
 <body>
+	<jsp:include page="../all_component/navbar.jsp" />
+
 
     <!-- Floating shapes for fancy 3D effect -->
     <div class="shape shape1"></div>

@@ -1,0 +1,31 @@
+/* styles.css */
+
+/* Custom Edit Button */
+.btn-primary {
+    background-color: #4CAF50; /* Green background */
+    color: white; /* White text */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 8px 12px; /* Padding for size */
+    transition: background-color 0.3s, transform 0.2s; /* Smooth transition */
+}
+
+.btn-primary:hover {
+    background-color: #45a049; /* Darker green on hover */
+    transform: scale(1.05); /* Slightly increase size on hover */
+}
+
+/* Custom Delete Button */
+.btn-danger {
+    background-color: #f44336; /* Red background */
+    color: white; /* White text */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 8px 12px; /* Padding for size */
+    transition: background-color 0.3s, transform 0.2s; /* Smooth transition */
+}
+
+.btn-danger:hover {
+    background-color: #d32f2f; /* Darker red on hover */
+    transform: scale(1.05); /* Slightly increase size on hover */
+}

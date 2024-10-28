@@ -1,0 +1,87 @@
+/* Full-page background with a soft gradient */
+.register-page-background {
+    background: white;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 15px;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Card styling for the registration form */
+.register-card {
+    border-radius: 12px;
+    background-color: #ffffff;
+    padding: 30px 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.register-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+/* Header styling inside the card */
+.register-header {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.register-header h5 {
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+/* Form input styling */
+.register-input {
+    margin-bottom: 15px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    padding: 10px;
+    background-color: #f7f7f7;
+    transition: border-color 0.3s, background-color 0.3s;
+}
+
+.register-input:focus {
+    border-color: #42a5f5;
+    background-color: #fff;
+    box-shadow: 0 0 5px rgba(66, 165, 245, 0.5);
+}
+
+/* Checkbox styling */
+.form-check-label {
+    font-size: 0.9rem;
+    color: #555;
+}
+
+/* Submit button styling */
+.signup-button {
+    border-radius: 25px;
+    background: linear-gradient(135deg, #42a5f5, #478ed1);
+    color: white;
+    border: none;
+    padding: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out, transform 0.2s;
+}
+
+.signup-button:hover {
+    background: linear-gradient(135deg, #478ed1, #42a5f5);
+    transform: scale(1.05);
+}
+
+/* Alert messages styling */
+.alert {
+    margin: 15px 0;
+    border-radius: 8px;
+}
+
+/* Responsive layout adjustments */
+@media (max-width: 576px) {
+    .register-card {
+        padding: 20px 15px;
+    }
+}

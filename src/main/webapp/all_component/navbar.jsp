@@ -83,7 +83,21 @@
             
            
 
-            
+
+
+    <!-- Sidebar -->
+    <div class="sidebar" id="sidebar">
+        <a href="index.jsp"><i class="fa-solid fa-house"></i><span> Home</span></a>
+        <a href="all_new_book.jsp"><i class="fa-solid fa-book-open"></i><span> New</span></a>
+        <a href="all_recent_book.jsp"><i class="fa-solid fa-clock"></i><span> Recent</span></a>
+        <a href="#"><i class="fa-solid fa-cog"></i><span> Settings</span></a>
+        <a href="#"><i class="fa-solid fa-address-book"></i><span> Contact</span></a>
+        <!-- Only show logout link when logged in -->
+        <%-- <c:if test="${not empty userobj}">
+            <a href="logout.jsp"><i class="fa-solid fa-sign-out-alt"></i><span> Logout</span></a>
+        </c:if> --%>
+    </div>
+
 
             
      
