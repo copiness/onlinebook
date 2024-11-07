@@ -1,5 +1,9 @@
+<%@page import="com.company.util.DBUtil"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+
+<%@ page import="com.entity.*, com.company.dao.*, java.util.*"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -34,24 +38,64 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>Book 1</td>
-                                <td>Author 1</td>
-                                <td>$10</td>
-                                <td><button class="btn btn-sm btn-primary">Buy</button></td>
-                            </tr>
-                            <tr>
-                                <td>Book 2</td>
-                                <td>Author 2</td>
-                                <td>$15</td>
-                                <td><button class="btn btn-sm btn-primary">Buy</button></td>
-                            </tr>
-                            <tr>
-                                <td>Book 3</td>
-                                <td>Author 3</td>
-                                <td>$20</td>
-                                <td><button class="btn btn-sm btn-primary">Buy</button></td>
-                            </tr>
+                            
+													  <%
+						    User u = (User) session.getAttribute("userobj");
+						
+						    CartDAOImpl dao = new CartDAOImpl(DBUtil.getConn());
+						    List<Cart> cartList = null; // Declare 'cartList' outside the try block for broader scope
+						
+						    try {
+						        cartList = dao.getBoookByuser(u.getId()); // Initialize 'cartList' inside the try block
+						    } catch (Exception e) {
+						        e.printStackTrace(); // This will print the full exception details to help understand the issue
+						    }
+						
+						    Double totalPrice = 0.00;
+						
+						    if (cartList != null) { // Ensure 'cartList' is not null to avoid NullPointerException
+						%>
+						    <table>
+						        <tr>
+						            <th>Book Name</th>
+						            <th>Author</th>
+						            <th>Price</th>
+						            <th>Action</th>
+						        </tr>
+						        <%
+						            for (Cart c : cartList) { // Iterating over 'cartList'
+						                totalPrice += c.getTotalprice(); // Adding each item's price to totalPrice
+						        %>
+						        <tr>
+						            <td><%= c.getBook_name() %></td>
+						            <td><%= c.getAuthor() %></td>
+						            <td><%= c.getPrice() %></td>
+						            <td>
+						                <a href="remove_book?bid=<%= c.getBid() %>" class="btn btn-sm btn-danger">Remove</a>
+						            </td>
+						        </tr>
+						        <% } %>
+						        <!-- Total Price Row -->
+						        <tr>
+						            <td colspan="3">Total Price</td>
+						            <td><%= totalPrice %></td>
+						        </tr>
+						    </table>
+						<%
+						    } else {
+						%>
+						    <p>No items in the cart.</p>
+						<%
+						    }
+						%>
+							  
+                             <tr>
+                                <td>Total Price</td>
+                                <td></td>
+                                <td></td>
+                                <td><%=totalPrice %></td>
+                            </tr> 
+                           
                         </tbody>
                     </table>
                 </div>
