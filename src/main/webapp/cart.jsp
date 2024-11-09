@@ -173,6 +173,10 @@
                         <div class="text-center">
                             <button type="submit" class="btn btn-warning">Order Now</button>
                             <a href="index.jsp" class="btn btn-warning">Continue Shopping</a>
+                            <div>
+                            
+                            </div>
+                            
                         </div>
                     </form>
                 </div>
