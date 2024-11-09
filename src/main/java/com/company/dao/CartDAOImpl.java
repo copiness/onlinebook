@@ -4,6 +4,7 @@ import java.sql.Connection;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -88,9 +89,28 @@ public class CartDAOImpl implements CartDAO {
 
 
 	@Override
-	public boolean deleteBook(int id) {
-		// TODO Auto-generated method stub
-		return false;
+	public boolean deleteBook(int bid,int uid) {
+		
+		boolean f = false;
+		
+		try {
+			String sql="delete from cart where bid=? and uid=?";
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ps.setInt(1, bid);
+			ps.setInt(2, uid);
+
+			int i=ps.executeUpdate();
+			
+			
+			if(i==1) {
+				f = true;
+			}
+		} catch(SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return f;    
+		
 	}
 	
 	

@@ -21,6 +21,31 @@
 
 <body style="background-color: #f0f1f2; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0;">
 
+
+
+		<c:if test="${empty userobj}">
+    		<c:redirect url="login.jsp"></c:redirect>
+ 		</c:if>
+ 		
+ 		
+ 		
+ 		
+ 		<c:if test="${not empty succMsg}">
+ 			<div class="alert alert-success" role="alert">${succMsg}</div>
+  			
+  			<c:remove var="succMsg" scope="session"/>
+  			
+  			
+  			</c:if>
+  			
+  			<c:if test="${not empty failedMsg}">
+ 			<div class="alert alert-danger" role="alert">${failedMsg}</div>
+  			
+  			<c:remove var="faileMsg" scope="session"/>
+  			
+  			
+  			</c:if>
+
 <div class="container">
     <div class="row justify-content-center" style="gap: 20px;">
         <!-- First Column (Left Side) -->
@@ -39,7 +64,7 @@
                         </thead>
                         <tbody>
                             
-													  <%
+							<%
 						    User u = (User) session.getAttribute("userobj");
 						
 						    CartDAOImpl dao = new CartDAOImpl(DBUtil.getConn());
@@ -70,10 +95,10 @@
 						            <td><%= c.getBook_name() %></td>
 						            <td><%= c.getAuthor() %></td>
 						            <td><%= c.getPrice() %></td>
-						            <td>
-						                <a href="remove_book?bid=<%= c.getBid() %>" class="btn btn-sm btn-danger">Remove</a>
-						            </td>
-						        </tr>
+								<td>
+								    <a href="remove_book?bid=<%= c.getBid() %>&uid=<%= c.getUid() %>" class="btn btn-sm btn-danger">Remove</a>
+								</td>
+						         
 						        <% } %>
 						        <!-- Total Price Row -->
 						        <tr>
@@ -115,7 +140,7 @@
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="inputEmail4">Email</label>
-                                <input type="email" class="form-control" id="inputEmail4">
+                                <input type="email" class="form-control" id="inputEmail4" >
                             </div>
                         </div>
                         <div class="form-row">
